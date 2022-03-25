@@ -1,0 +1,149 @@
+What is Server Side Scripting?
+Various Server Side Scripting Technologies
+
+                                Node.js
+
+- It is a server side script technology that run on V8 compiler.
+- It is JavaScript Based
+- It uses Async techniques
+- No Buffering
+- It sends data in form of packet.
+- It is single threaded
+- Not good for CPU intensive apps.
+- It is faster as it is single threaded.
+- Not good for ERP.
+- Good for audio and video streaming apps.
+
+# Setup Environment for Node.js
+
+1. Download and Install Node.js
+
+2. Test >node -v >npm -v
+
+# Server Side Objects
+
+1. Request
+2. Response
+3. Session
+4. Application
+5. Cookie
+6. OS
+7. FS
+8. Server
+9. Memory Stream
+
+# Server Side Techniques
+
+1. Model Binding
+2. Data Binding
+3. Routing
+4. Security
+5. Buffering
+
+# Language
+
+1. JavaScript
+
+Note: JavaScript is used only for REPL and Language Features.
+No DOM manipulations.
+
+        R        - Read
+        E        - Evaluate [Expressions]
+        P        - Print
+        L        - Loop
+
+         document.write()        // invalid
+         alert()
+         prompt()
+         innerHTML etc..
+
+# Node REPL Terminal:
+
+- It provides a terminal to run node.js commands
+- You can also run REPL.
+- To open REPL terminal
+
+        C:\> node
+        >
+
+# Node.js Programs
+
+- Every node.js program is a JavaScript program stored in ".js" file.
+- You can compile and run by using node compiler.
+
+Ex:
+hello.js
+console.log("Hello ! Node.js");
+
+C:\> node hello.js
+
+# Node.js Server Side Program Structure:
+
+1.  Download and Install every module that your want to use in application.
+    [ Node.js comes with only core module - others you have to download ]
+
+2.  Import module into program by using "require()".
+
+        var  refName = require("ModuleName");
+        refName.Class
+                 refName.function()
+                 refName.property
+
+3.  Implement the classes and functions to define a functionality.
+
+                  Node  FS Module
+                  =============
+
+- Node "File Stream" module provides a set of properties and methods that are used to access and control files on server.
+
+1.  Install FS module in your project
+
+        > npm install fs --save
+
+2.  Write the following program
+    "index.js"
+
+var fs = require("fs");
+
+console.log("Read Started");
+var data = fs.readFileSync("../data/help.txt");
+console.log(data.toString());
+console.log("Read Completed");
+
+              > node index.js
+
+Note: Node.js is using synchronous technique for executing the tasks.
+
+Ex: Async Reading
+
+var fs = require("fs");
+
+console.log("Read Started");
+
+fs.readFile("../data/help.txt", function(err, data){
+if(!err){
+console.log(data.toString());
+} else {
+console.log(err);
+}
+})
+
+console.log("Read Completed");
+
+                                Node  OS Module
+                            =======================
+
+- It provides a set of properties and methods that are used by server to access the information about OS running on Server.
+
+cpus() It returns the CPU structure.
+Syntax:
+var os = require("os");
+console.log(os.cpus());
+
+freemem Free memory
+
+totalmem Total memory
+
+Ex:
+var os = require("os");
+console.log(` Free Memory : ${os.freemem} \n Total : ${os.totalmem}`);
