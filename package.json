@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "@types/express": "types/express",
     "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23"
   }
 }
